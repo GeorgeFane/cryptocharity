@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
     const classes = useStyles();
 
     return (
@@ -35,12 +35,14 @@ export default function ButtonAppBar() {
                     </IconButton>
 
                     <Typography variant="h6" className={classes.title}>
-                        Michigan Dining
+                        CryptoCharity
                     </Typography>
+
+                    {props.drawer}
 
                     <IconButton
                         color="inherit"
-                        href='https://github.com/GeorgeFane/mdining/tree/source'
+                        href='https://github.com/GeorgeFane/cryptocharity'
                         target='_blank'
                     >
                         <GitHub />
