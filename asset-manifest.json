@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/cryptocharity/static/js/main.3fa61b3b.chunk.js",
-    "main.js.map": "/cryptocharity/static/js/main.3fa61b3b.chunk.js.map",
+    "main.js": "/cryptocharity/static/js/main.9ac7c520.chunk.js",
+    "main.js.map": "/cryptocharity/static/js/main.9ac7c520.chunk.js.map",
     "runtime-main.js": "/cryptocharity/static/js/runtime-main.96aa67f0.js",
     "runtime-main.js.map": "/cryptocharity/static/js/runtime-main.96aa67f0.js.map",
     "static/js/2.160e720e.chunk.js": "/cryptocharity/static/js/2.160e720e.chunk.js",
@@ -13,6 +13,6 @@
   "entrypoints": [
     "static/js/runtime-main.96aa67f0.js",
     "static/js/2.160e720e.chunk.js",
-    "static/js/main.3fa61b3b.chunk.js"
+    "static/js/main.9ac7c520.chunk.js"
   ]
 }
