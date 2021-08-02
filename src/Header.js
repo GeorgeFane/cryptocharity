@@ -2,9 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import { Typography, Box, Paper, Button, Grid, InputLabel, MenuItem, FormHelperText, FormControl, Select, TextField, Menu } from '@material-ui/core';
 import { GitHub, Home } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        margin: theme.spacing(2),
     },
     title: {
         flexGrow: 1,
@@ -21,6 +20,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar(props) {
     const classes = useStyles();
+    
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
         <div className={classes.root}>
@@ -38,7 +47,28 @@ export default function ButtonAppBar(props) {
                         CryptoCharity
                     </Typography>
 
-                    {props.drawer}
+                    <Typography className={classes.title}>
+                        Alex Beloiu, George Fane, Abbas Kagal, Will Wang
+                    </Typography>
+                    
+                    <Button
+                        onClick={handleClick}
+                        color='inherit'
+                    >
+                        Balances
+                    </Button>
+                    <Menu
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        {props.bals.map( ([cont, bal]) => (
+                            <MenuItem onClick={handleClose}>
+                                {cont}: {bal}
+                            </MenuItem>
+                        ))}
+                    </Menu>
 
                     <IconButton
                         color="inherit"

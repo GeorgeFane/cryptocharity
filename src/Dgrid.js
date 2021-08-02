@@ -3,13 +3,14 @@ import { Typography, Tooltip, IconButton, Toolbar } from '@material-ui/core';
 import { DataGrid } from '@material-ui/data-grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
+        margin: theme.spacing(3),
         '& .charity': {
             backgroundColor: 'red',
         },
     },
-});
+}));
 
 const charity = '0x596Aa50158BFf76F8D08F848d701C83a4F754d9c';
 

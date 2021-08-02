@@ -11,7 +11,6 @@ import contract from './contract';
 import env from './env';
 import Dgrid from './Dgrid';
 import Form from './Form';
-import TempDrawer from './TempDrawer';
 import Header from './Header';
 
 const url = 'https://sandbox.truffleteams.com/' + env.truffle;
@@ -69,7 +68,7 @@ class Map extends React.Component {
     render () {
         return (
             <div>
-                <Header drawer={<TempDrawer bals={this.state.bals} />} />
+                <Header bals={Object.entries(this.state.bals)} />
                 <Toolbar />
 
                 <Form web3={web3} myContract={myContract} />

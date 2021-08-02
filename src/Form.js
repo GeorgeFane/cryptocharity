@@ -1,13 +1,11 @@
 import React from 'react';
 import { Typography, Box, Paper, Button, Grid, InputLabel, MenuItem, FormHelperText, FormControl, Select, TextField } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import logo from './logo.png';
 
 const useStyles = theme => ({
     root: {
         flexGrow: 1,
-    },
-    title: {
-        padding: theme.spacing(1),
     },
     paper: {
         padding: theme.spacing(1),
@@ -75,12 +73,16 @@ class Form extends React.Component {
         this.donate() : this.spend();
 
     render() {
-        const classes = this.props.classes;
+        const { classes } = this.props;
         return (
-            <Grid container spacing={1}>
+            <Grid container spacing={1} className={classes.root}>
+                <Grid item xs={1}>
+                    <img src={logo} width='99%' />
+                </Grid>
+
                 <Grid item xs={1}>
                     <Paper className={classes.paper}>
-                        <Typography variant="h4" className={classes.title}>
+                        <Typography variant="h4">
                             Form
                         </Typography>
                     </Paper>
@@ -124,7 +126,7 @@ class Form extends React.Component {
                 <Grid item xs>
                     <Paper className={classes.paper}>
                         <TextField 
-                            label="Memo (only stored for Charity)"
+                            label="Memo (only for Charity)"
                             onChange={(event) => this.setState({ memo: event.target.value })}
                         />
                     </Paper>
@@ -138,6 +140,7 @@ class Form extends React.Component {
                         >
                             Submit
                         </Button>
+                        
                     </div>
                 </Grid>
             
